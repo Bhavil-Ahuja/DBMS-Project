@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+<h1>HOME</h1>
+<div class="post">
+<p><%= home %></p>
+<% posts.forEach(function(post) { %>
+    <h2><%= post.title %></h2>
+    <p>
+    <%= post.content.substring(0, 100) + " ..." %>
+    <a href="/route/posts/<%= post._id %>">Read More</a>
+    </p>
+<% }) %>
+<a href="/route/compose"><button class="btn btn-dark">Compose</button></a>
+</div>
